@@ -554,11 +554,11 @@
                             org.apache.neethi.*; version="${imp.pkg.version.neethi}",
                             javax.servlet; version="${imp.pkg.version.javax.servlet}",
                             javax.servlet.http; version="${imp.pkg.version.javax.servlet}",
-                            javax.xml.stream.*,
-                            javax.xml.soap.*,
+                            javax.xml.stream.*;version="0.0.0",
+                            javax.xml.soap.*;version="0.0.0",
                             org.apache.commons.io.*,
-                            javax.mail.*,
-                            javax.wsdl.*,
+                            javax.mail.*;version="0.0.0",
+                            javax.wsdl.*;version="0.0.0",
                             javax.xml.bind.*;resolution:=optional,
                             org.apache.catalina.tribes; version=6.0.16;resolution:=optional,
                             *;resolution:=optional
@@ -568,6 +568,9 @@
                         <Embed-Dependency>
                             xmlbeans;scope=compile|runtime;inline=false;
                         </Embed-Dependency>
+                        <Provide-Capability>
+                            osgi.service;objectClass=org.apache.axis2.engine.ListenerManager
+                        </Provide-Capability>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
